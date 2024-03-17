@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<p id="display"></p>
+<script>
+localStorage.setItem('name', 'Varun');
+localStorage.setItem('age', '30');
+
+const namestored = localStorage.getItem('name');
+const agestored = localStorage.getItem('age');
+
+storedOutput = ("name:"+ namestored+" <br> age:"+agestored);
+document.getElementById('display').innerHTML = storedOutput;
+
+
+
+</script>
+
+</body>
+</html>
