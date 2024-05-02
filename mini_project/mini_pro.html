@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width", initial-scale="1.0">
+        <link rel="stylesheet" href="mini.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <title>Manager Application</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="flex-container">
+                    
+                    <div style="flex-grow: 1;">
+                        <div class="logo">
+                            <img src="logo.png">
+                        </div>
+                    </div>
+                    <div style="flex-grow: 15;">
+                        <h1>Manager Application</h1>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <div class="pill-nav">
+                    <ul> 
+                        <li class="menu">
+                            <a href="javascript:void(0)" class="menubtn" >Menu</a>
+                            <div class="menu-content">
+                                <button><a href="#newtask" class="newtask" onclick="newtask()">create a task</a></button>
+            
+                        </li>
+                        <li class="priority1">
+                            <a href="javascript:void(0)" class="prioritybtn">Priority</a>
+                            <div class="priority-content">
+                                <a href="#" onclick="highpriority()">High Priority</a>
+                                <a href="#" onclick="normalpriority()" >Normal Priority</a>
+                                <a href="#" >No Timelines</a>
+                            </div>
+                        </li>
+                        <li class="search-bar">
+                            <a href="javascript:void(0)" class="searchbtn">Search</a>
+                            
+                                <input type="text" id="myInput" class="search-content" placeholder="Enter task name" onkeyup="search()">
+                              
+                            
+                        </li>
+                        <a href="#" class="home" >Home</a>
+                    </ul>
+                </div>
+            </nav>
+            <main>
+              <ul class="notes"></ul>
+            </main>
+            <section id="newtask">
+                <div class="popup-box">
+                    <div class="popup">
+                      <div class="content">
+                        <header>
+                          <p></p>
+                          <i class="uil uil-times"></i>
+                        </header>
+                        <form action="#">
+                          <div class="row title" id="rowtitle">
+                            <label>Title</label>
+                            <a><input type="text" spellcheck="false"></a>
+                          </div>
+                          <div class="row description">
+                            <label>Description</label>
+                            <textarea spellcheck="false"></textarea>
+                          </div>
+                          <div class="priority">
+                            <label>Priority</label>
+                            <div class="priority-btn">
+                            <select>
+                                <option class="highp" value="High priority">High Priority</option>
+                                <option class="lowp" value="Low priority">Low Priority</option>
+                                <option class="nop" value="No timelines">No Timelines</option>
+                            </select>
+                          </div>
+                          </div>
+
+                          <button></button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapper">
+                    <li class="add-box">
+                      <div class="icon"><i class="uil uil-plus"></i></div>
+                      <p>Add new note</p>
+                    </li>
+                  </div>
+            </section>
+            
+        
+        <p id="Menu"></p>
+
+
+
+        <script src="mini.js"></script>
+    </body>
+</html>
