@@ -153,39 +153,40 @@ li.menu {
 
 
 
-li a, .prioritybtn {
+li a, .statusbtn {
     display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-li a:hover, .priority1:hover .prioritybtn {
+li a:hover, .status1:hover .statusbtn {
     background-color: rgb(228, 236, 175);
 }
-li.priority1 {
+li.status1 {
     display: inline-block;
     width: 200px;
     font-size: 30px;
 }
-.priority-content {
+.status-content {
     display: none;
     position: absolute;
     min-width: 160px;
     box-shadow: rgb(226, 237, 182);
     z-index: 1;
+    font-size: 15px;
 }
-.priority-content a {
+.status-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
-.priority-content a:hover{
+.status-content a:hover{
     background-color: rgb(226, 239, 174);
 }
-.priority1:hover .priority-content{
+.status1:hover .status-content{
     display: inline-block;
     position: relative;
     right: 0;
@@ -257,6 +258,7 @@ li.search-bar {
 .search button img{
     width: 18px;
 }
+
 body{
   background: #8dd6a2;
   padding-top: 0px;
