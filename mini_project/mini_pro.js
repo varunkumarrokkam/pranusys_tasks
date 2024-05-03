@@ -5,7 +5,7 @@ closeIcon = popupBox.querySelector("header i"),
 titleTag = popupBox.querySelector("input"),
 descTag = popupBox.querySelector("textarea"),
 addBtn = popupBox.querySelector("button"),
-priorityTag = popupBox.querySelector("select");
+statusTag = popupBox.querySelector("select");
 
 
 
@@ -43,14 +43,14 @@ function showNotes() {
                             <span>${filterDesc}</span>
                         </div>
                         <div>
-                            <option>${note.priority}</option>
+                            <option>${note.status}</option>
                         </div>
                         <div class="bottom-content">
                             <span>${note.date}</span>
                             <div class="settings">
                                 <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
                                 <ul class="menu">
-                                    <li onclick="updateNote(${id}, '${note.title}', '${filterDesc}', '${note.priority}')"><i class="uil uil-pen"></i>Edit</li>
+                                    <li onclick="updateNote(${id}, '${note.title}', '${filterDesc}', '${note.status}')"><i class="uil uil-pen"></i>Edit</li>
                                     <li onclick="deleteNote(${id})"><i class="uil uil-trash"></i>Delete</li>
                                 </ul>
                             </div>
@@ -78,15 +78,15 @@ function deleteNote(noteId) {
     showNotes();
 }
 
-function updateNote(noteId, title, filterDesc, priority) {
+function updateNote(noteId, title, filterDesc, status) {
     let description = filterDesc.replaceAll('<br/>', '\r\n');
-    updateId = noteId;
     isUpdate = true;
-
+    updateId = noteId;
+    
     addBox.click();
     titleTag.value = title;
     descTag.value = description;
-    priorityTag.value = priority;
+    status.value = status;
     popupTitle.innerText = "Update a Note";
     addBtn.innerText = "Update Note";
 }
@@ -95,16 +95,16 @@ addBtn.addEventListener("click", e => {
     e.preventDefault();
     let title = titleTag.value.trim(),
     description = descTag.value.trim(),
-    priority = priorityTag.value.trim();
+    status = statusTag.value.trim();
 
-    if(title || description || priority) {
+    if(title || description || status) {
         let currentDate = new Date(),
         month = months[currentDate.getMonth()],
         day = currentDate.getDate(),
         year = currentDate.getFullYear();
 
 
-        let noteInfo = {title, description, priority, date: `${month} ${day}, ${year} `}
+        let noteInfo = {title, description, status, date: `${month} ${day}, ${year} `}
         if(!isUpdate) {
             notes.push(noteInfo);
         } else {
@@ -115,6 +115,5 @@ addBtn.addEventListener("click", e => {
         showNotes();
         closeIcon.click();
     }
-    
+    popupBox();
 });
-
