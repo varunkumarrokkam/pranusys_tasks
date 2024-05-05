@@ -117,3 +117,12 @@ addBtn.addEventListener("click", e => {
     }
     popupBox();
 });
+
+
+
+function home() {
+    let my_url="mini.html";
+    window.onload = function() {
+        window.location.replace(my_url);
+}
+};
