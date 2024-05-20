@@ -1,267 +1,14 @@
+
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 *{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
-.main{
-    width: 100%;
-    height: 200vh;
-    position: relative;
-    overflow: hidden;
-    
-}
-
-.header{
-    width: 100%;
-    padding: 40px;
-    text-align: center;
-    background-color: rgb(73, 35, 195);
-    color: antiquewhite;
-    font-size: 20px;
-    align-items: stretch;
-}
-.flex-container{
-    display: flex;
-}
-.flex-container > div {
-    align-items: center;
-
-}
-.header h1{
-    text-align : center;
-    position: sticky;
-}
-.logo{
-    flex-basis: 50%;
-    align-items: end;
-    justify-content: left;
-    display: center;
-}
-.logo img{
-    width: 80px;
-    display: left;
-    
-}
-pill-nav{
-    width: 100%;
-    padding: 14px;
-    display: inline-block;
-    text-align: center;
-    overflow: hidden;
-    background-color: none;
-    position: fixed;
-    position: -webkit-sticky;
-    justify-content: space-between;
-    font-style: purple;
-    color: black;
-    top: 0;
-}
-.pill-nav a.menu{
-   width: 100px;
-   font-size: 30px;
-   align-items: start;
-   
-}
-.pill-nav a.priority{
-    width: 100px;
-    font-size: 30px;
-    text-align: center;
-}
-.pill-nav a.search{
-    width: 100px;
-    font-size: 30px;
-}
-.pill-nav a.home{
-    float: right;
-    width: 200px;
-    font-size: 30px;
-    text-align: center;
-}
-
-.pill-nav a{
-    float: left;
-    display: block;
-    text-align: center;
-    text-decoration : none;
-    padding: 14px 20px;
-    color: rgb(86, 7, 81);
-    background-color: rgb(245, 245, 184);
-}
-.pill-nav a:hover {
-    background-color: rgb(229, 236, 217);
-    color: blue;
-
-}
-li {
-    float :left;
-}
-li a, .menubtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover, .menu:hover .menubtn {
-    background-color: rgb(244, 249, 188);
-}
-li.menu {
-    display: inline-block;
-    width: 200px;
-    font-size: 30px;
-}
-.menu-content {
-    display: none;
-    position: absolute;
-   
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-.menu-content a button{
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    font-size: ;
-    display: block;
-    text-align: left;
-
-}
-.menu-content a:hover{
-
-   
-}
-.menu:hover .menu-content{
-    display: inline-block;
-    position: relative;
-}
-.content{
-    width: 100%;
-    padding: 15px 20px 20px;
-    position: absolute;
-    max-width: 400px;
-    justify-content: center;
-}
-.row title{
-    width:100%;
-    padding: 20px;
-
-}
-
-
-
-
-li a, .statusbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover, .status1:hover .statusbtn {
-    background-color: rgb(228, 236, 175);
-}
-li.status1 {
-    display: inline-block;
-    width: 200px;
-    font-size: 30px;
-}
-.status-content {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    box-shadow: rgb(226, 237, 182);
-    z-index: 1;
-    font-size: 15px;
-}
-.status-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.status-content a:hover{
-    background-color: rgb(226, 239, 174);
-}
-.status1:hover .status-content{
-    display: inline-block;
-    position: relative;
-    right: 0;
-}
-li a, .searchbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-li a:hover, .search-bar:hover .searchbtn {
-    background-color: rgb(231, 244, 174);
-}
-li.search-bar {
-    display: inline-block;
-    width: 200px;
-    font-size: 30px;
-}
-.search-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(228, 245, 183);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-.search-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-.search-content a:hover{
-    background-color: blueviolet;
-}
-.search-bar:hover .search-content{
-    display: inline-table;
-    position: relative;
-}
-.search-bar {
-    width: 100%;
-    display: i;
-    align-items: center;
-    justify-content: spacse-between;
-    position: relative;
-
-}
-.search-bar input{
-    border: 0;
-    outline: 0;
-    padding: 12px 22px;
-    flex: 1;
-    margin-right: 20px;
-    border-radius: 30px;
-    font-size: 18px;
-    background-color: aqua;
-    color:black;
-}
-.search button{
-    border: 0;
-    outline: 0;
-    background-color: antiquewhite;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-.search button img{
-    width: 18px;
-}
-
 body{
-  background: #8dd6a2;
-  padding-top: 0px;
+  background: #88ABFF;
 }
 ::selection{
   color: #fff;
@@ -291,13 +38,7 @@ body{
   cursor: pointer;
   flex-direction: column;
   justify-content: center;
-  display: none; 
 }
-
-.newtask:hover .add-box {
-  display: block;
-}
-
 .add-box .icon{
   height: 78px;
   width: 78px;
@@ -316,7 +57,6 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 65px;
 }
 .note .details{
   max-height: 165px;
@@ -457,7 +197,6 @@ body{
 }
 .content form .row{
   margin-bottom: 20px;
-  
 }
 form .row label{
   font-size: 18px;
@@ -493,10 +232,6 @@ form button{
   background: #6A93F8;
 }
 
-.uil uil-times {
-  align-items: right;
-}
-
 @media (max-width: 660px){
   .wrapper{
     margin: 15px;
@@ -509,8 +244,4 @@ form button{
   .bottom-content .settings i{
     font-size: 17px;
   }
-}
-
-.priority .priority-btn .highp {
-  font-style: rgb(245, 69, 69);
 }
