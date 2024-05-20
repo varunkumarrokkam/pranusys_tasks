@@ -91,7 +91,6 @@ function updateNote(noteId, title, filterDesc, status) {
     popupTitle.innerText = "Update a Note";
     addBtn.innerText = "Update Note";
     popupBox.classList.add("show");
-    //document.querySelector("body").style.overflow = "hidden";
 }
 
 addBtn.addEventListener("click", e => {
