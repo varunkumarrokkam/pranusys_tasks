@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width-device-width", initial-scale="1.0">
+        <meta name="viewport" content="width-device-width" initial-scale="1.0">
         <link rel="stylesheet" href="mini.css">
-        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
         <title>Manager Application</title>
     </head>
     <body>
@@ -18,7 +17,7 @@
                             <img src="logo.png">
                         </div>
                     </div>
-                    <div style="flex-grow: 15;">
+                    <div class="headertext" style="flex-grow: 2;">
                         <h1>Manager Application</h1>
                     </div>
                 </div>
@@ -32,26 +31,24 @@
                                 <button><a href="#newtask" class="newtask" onclick="newtask()">create a task</a></button>
             
                         </li>
-                        <li class="status1">
-                            <a href="javascript:void(0)" class="statusbtn">Status</a>
-                            <div class="status-content">
-                                <a href="#" onclick="completed()">Completed Tasks</a>
-                                <a href="#" onclick="incomplete()" >Incomplete Tasks</a>
-                            </div>
-                        </li>
+                        
                         <li class="search-bar">
-                            <a href="javascript:void(0)" class="searchbtn">Search</a>
-                            
-                                <input type="text" id="myInput" class="search-content" placeholder="Enter task name" onkeyup="search()">
-                              
-                            
+                            <header>
+                                <input type="text" id="myInput" class="search-content" onchange="search()" placeholder="Enter task name">
+                            </header>
                         </li>
-                        <a href="#my_url" class="home" onclick="home()">Home</a>
+                        <li class="status1">
+                        <a href="javascript:void(0)" class="status" >Task Status</a>
+                        <div class="status-content" id="status">
+                          <a href="#" id="com" class="com1" onclick="completed()">Completed Tasks</a>
+                          <a href="#" class="incom" onclick="incomplete()" >Incomplete Tasks</a>
+                         </div>
+                        </li>
                     </ul>
                 </div>
             </nav>
             <main>
-              <ul class="notes"></ul>
+              <ul class="notes" id="taskList"></ul>
             </main>
             <section id="newtask">
                 <div class="popup-box">
@@ -71,11 +68,11 @@
                             <textarea spellcheck="false"></textarea>
                           </div>
                           <div class="status">
-                            <label>Status</label>
+                            <label for="category">Status</label>
                             <div class="status-btn">
-                            <select>
-                                <option class="completed" id="Completed" value="completed">Completed</option>
-                                <option class="incomplete" id="incomplete" value="Incomplete">Incomplete</option>
+                            <select id="stat">
+                                <button>><li><a><option href="#" class="completed" category="completed" id="completed" value="completed" onclick="completed()">Completed</option></a></li></button
+                                <li><a><option class="incomplete" id="incomplete" value="Incomplete">Incomplete</option></a></li>
                             </select>
                           </div>
                           </div>
@@ -95,9 +92,6 @@
             
         
         <p id="Menu"></p>
-
-
-
-        <script src="mini.js"></script>
+  <script src="mini.js"></script>
     </body>
 </html>
