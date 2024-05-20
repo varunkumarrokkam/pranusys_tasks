@@ -1,3 +1,4 @@
+
 const  addBox = document.querySelector(".add-box"),
 popupBox = document.querySelector(".popup-box"),
 popupTitle = popupBox.querySelector("header p"),
@@ -89,6 +90,8 @@ function updateNote(noteId, title, filterDesc, status) {
     status.value = status;
     popupTitle.innerText = "Update a Note";
     addBtn.innerText = "Update Note";
+    popupBox.classList.add("show");
+    //document.querySelector("body").style.overflow = "hidden";
 }
 
 addBtn.addEventListener("click", e => {
@@ -117,12 +120,3 @@ addBtn.addEventListener("click", e => {
     }
     popupBox();
 });
-
-
-
-function home() {
-    let my_url="mini.html";
-    window.onload = function() {
-        window.location.replace(my_url);
-}
-};
