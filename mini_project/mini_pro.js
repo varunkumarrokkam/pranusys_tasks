@@ -1,4 +1,5 @@
 
+
 const  addBox = document.querySelector(".add-box"),
 popupBox = document.querySelector(".popup-box"),
 popupTitle = popupBox.querySelector("header p"),
@@ -71,13 +72,44 @@ function showMenu(elem) {
     });
 }
 
-function deleteNote(noteId) {
-    let confirmDel = confirm("Are you sure you want to delete this note?");
-    if(!confirmDel) return;
-    notes.splice(noteId, 1);
-    localStorage.setItem("notes", JSON.stringify(notes));
-    showNotes();
+
+const modal = document.getElementById("deleteModal");
+const confirmBtn = document.getElementById("confirmDelete");
+const cancelBtn = document.getElementById("cancelDelete");
+
+function openModal(message, confirmCallback) {
+    document.getElementById("modalMessage").textContent = message;
+    modal.style.display = "block";
+
+    confirmBtn.addEventListener("click", confirmCallback);
+    document.getElementsByClassName("close")[0].addEventListener("click", closeModal);
+    cancelBtn.addEventListener("click", closeModal);
+
+    window.addEventListener("click", function (event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
 }
+
+function closeModal() {
+    modal.style.display = "none";
+    confirmBtn.removeEventListener("click", confirmCallback);
+    cancelBtn.removeEventListener("click", closeModal);
+}
+
+function deleteNote(noteId) {
+    openModal(
+        "Are you sure you want to delete this note?",
+        function () {
+            notes.splice(noteId, 1);
+            localStorage.setItem("notes", JSON.stringify(notes));
+            showNotes();
+            closeModal();
+        }
+    );
+}
+
 
 function updateNote(noteId, title, filterDesc, status) {
     let description = filterDesc.replaceAll('<br/>', '\r\n');
@@ -120,20 +152,20 @@ addBtn.addEventListener("click", e => {
     popupBox();
 });
 
+
 let search =document.getElementById('search')
 search.addEventListener('input', ()=>{
     let inputValue = search.value.toLowerCase()
     let allNotes = document.getElementsByClassName('note');
 
-    Array.from(allNotes).forEach((elem)=>{
-        let noteText = elem.getElementsByTagName('p')[0].innerText
+    Array.from(allNotes).forEach((ele)=>{
+        let noteText = ele.getElementsByTagName('p')[0].innerText
 
         if(noteText.toLowerCase().includes(inputValue)){
-            elem.style.display = 'block';
+            ele.style.display = 'block';
         }
         else {
-            elem.style.display = 'none';
+            ele.style.display = 'none';
         }
     })
 });
-
