@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width-device-width" initial-scale="1.0">
-        <link rel="stylesheet" href="mini.css">
+        <link rel="stylesheet" href="mini_project.css">
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></link>
         <title>Manager Application</title>
     </head>
@@ -34,7 +34,7 @@
                         
                         <li class="search-bar">
                             <header>
-                                <input type="text" id="myInput" class="search-content" onchange="search()" placeholder="Enter task name">
+                                <input type="text" id="search" class="search-content" onchange="search()" placeholder="Enter task name">
                             </header>
                         </li>
                         <li class="status1">
@@ -71,7 +71,7 @@
                             <label for="category">Status</label>
                             <div class="status-btn">
                             <select id="stat">
-                                <button>><li><a><option href="#" class="completed" category="completed" id="completed" value="completed" onclick="completed()">Completed</option></a></li></button
+                                <li><a><option href="#" class="completed" category="completed" id="completed" value="completed" onclick="completed()">Completed</option></a></li>
                                 <li><a><option class="incomplete" id="incomplete" value="Incomplete">Incomplete</option></a></li>
                             </select>
                           </div>
@@ -90,8 +90,17 @@
                   </div>
             </section>
             
+            <div id="deleteModal" class="modal">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modalMessage">Are you sure you want to delete this note?</p>
+                <button id="confirmDelete">Delete</button>
+                <button id="cancelDelete">Cancel</button>
+              </div>
+            </div>
+
         
         <p id="Menu"></p>
-  <script src="mini.js"></script>
+  <script src="mini_project.js"></script>
     </body>
 </html>
