@@ -119,3 +119,21 @@ addBtn.addEventListener("click", e => {
     }
     popupBox();
 });
+
+let search =document.getElementById('search')
+search.addEventListener('input', ()=>{
+    let inputValue = search.value.toLowerCase()
+    let allNotes = document.getElementsByClassName('note');
+
+    Array.from(allNotes).forEach((elem)=>{
+        let noteText = elem.getElementsByTagName('p')[0].innerText
+
+        if(noteText.toLowerCase().includes(inputValue)){
+            elem.style.display = 'block';
+        }
+        else {
+            elem.style.display = 'none';
+        }
+    })
+});
+
