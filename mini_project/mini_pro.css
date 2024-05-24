@@ -58,8 +58,7 @@ pill-nav{
   position: fixed;
   position: -webkit-sticky;
   justify-content: space-between;
-  font-style: purple;
-  color: black;
+  color: rgb(245, 223, 223);
   top: 0;
 }
 .pill-nav a.menu{
@@ -156,11 +155,13 @@ li a:hover, .status1:hover .statusbtn {
   background-color: rgb(228, 236, 175);
 }
 li.status1 {
-  display: block;
-  width: 200px;
-  font-size: 30px;
-  float : right;
   
+  float : right;
+  display: block;
+  width: 300px;
+  font-size: 30px;
+  padding: 9px;
+  background-color: none;
 }
 .status-content {
   display: none;
@@ -171,7 +172,7 @@ li.status1 {
   font-size: 15px;
 }
 .status-content a {
-  color: black;
+  color: rgb(250, 241, 241);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -195,7 +196,7 @@ li.search-bar {
 .search-content {
   display: none;
   position: absolute;
-  background-color: rgb(45, 45, 44);
+  background-color: black;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -210,7 +211,9 @@ li.search-bar {
   align-items: center;
   justify-content: spacse-between;
   position: relative;
-
+}
+.search-bar ::placeholder {
+  color: rgb(86, 7, 81);
 }
 .search-bar input{
   width: 100%;
@@ -218,11 +221,10 @@ li.search-bar {
   outline: 0;
   padding: 12px 22px;
   flex: 1;
-  /*margin-right: 20px;*/
   border-radius: 30px;
   font-size: 18px;
   background-color: rgb(245, 245, 184);
-  color:black;
+  color:rgb(14, 14, 14);
   width: 500px;
 }
 
@@ -494,7 +496,7 @@ align-items: right;
 margin: 160px;
 }
 
-.modal {
+.delete {
   display: none;
   position: fixed;
   z-index: 1;
@@ -506,7 +508,7 @@ margin: 160px;
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-content {
+.delete-content {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
