@@ -80,7 +80,7 @@ function openDelete(message, confirmCallback) {
     del.style.display = "block";
 
     confirmBtn.addEventListener("click", confirmCallback);
-    document.getElementsByClassName("close")[0].addEventListener("click", closeModal);
+    document.getElementsByClassName("close")[0].addEventListener("click", closeDelete);
     cancelBtn.addEventListener("click", closeDelete);
 
     window.addEventListener("click", function (event) {
