@@ -1,5 +1,3 @@
-
-
 const  addBox = document.querySelector(".add-box"),
 popupBox = document.querySelector(".popup-box"),
 popupTitle = popupBox.querySelector("header p"),
@@ -73,39 +71,39 @@ function showMenu(elem) {
 }
 
 
-const modal = document.getElementById("deleteModal");
+const del = document.getElementById("delete");
 const confirmBtn = document.getElementById("confirmDelete");
 const cancelBtn = document.getElementById("cancelDelete");
 
-function openModal(message, confirmCallback) {
-    document.getElementById("modalMessage").textContent = message;
-    modal.style.display = "block";
+function openDelete(message, confirmCallback) {
+    document.getElementById("deleteMessage").textContent = message;
+    del.style.display = "block";
 
     confirmBtn.addEventListener("click", confirmCallback);
     document.getElementsByClassName("close")[0].addEventListener("click", closeModal);
-    cancelBtn.addEventListener("click", closeModal);
+    cancelBtn.addEventListener("click", closeDelete);
 
     window.addEventListener("click", function (event) {
-        if (event.target == modal) {
-            closeModal();
+        if (event.target == del) {
+            closeDelete();
         }
     });
 }
 
-function closeModal() {
-    modal.style.display = "none";
+function closeDelete() {
+    del.style.display = "none";
     confirmBtn.removeEventListener("click", confirmCallback);
-    cancelBtn.removeEventListener("click", closeModal);
+    cancelBtn.removeEventListener("click", closeDelete);
 }
 
 function deleteNote(noteId) {
-    openModal(
+    openDelete(
         "Are you sure you want to delete this note?",
         function () {
             notes.splice(noteId, 1);
             localStorage.setItem("notes", JSON.stringify(notes));
             showNotes();
-            closeModal();
+            closeDelete();
         }
     );
 }
@@ -160,6 +158,26 @@ search.addEventListener('input', ()=>{
 
     Array.from(allNotes).forEach((ele)=>{
         let noteText = ele.getElementsByTagName('p')[0].innerText
+
+        if(noteText.toLowerCase().includes(inputValue)){
+            ele.style.display = 'block';
+        }
+        else {
+            ele.style.display = 'none';
+        }
+    })
+});
+
+
+
+
+let status_search =document.getElementById('status_search')
+status_search.addEventListener('input', ()=>{
+    let inputValue = status_search.value.toLowerCase()
+    let allNotes = document.getElementsByClassName('note');
+
+    Array.from(allNotes).forEach((ele)=>{
+        let noteText = ele.getElementsByTagName('option')[0].innerText
 
         if(noteText.toLowerCase().includes(inputValue)){
             ele.style.display = 'block';
